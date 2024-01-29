@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" style="background-color: #993399 !important">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <div class="navbar-toggle">
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" href="#" style="margin-left:277px; color: white">Criar Review</a>
+    </div>
+  </div>
+</nav>
+<br />
+<div class="content" style="margin-top:70px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="titulo">Título</label>
+              <span *ngIf="!titulo" class="required-marker">*</span>
+              <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título aqui" [(ngModel)]="titulo">
+            </div>
+            <div class="form-group">
+              <label for="subtitulo">Sub-título</label>
+              <span *ngIf="!subTitulo" class="required-marker">*</span>
+              <input type="text" class="form-control" name="subTitulo" id="subtitulo" placeholder="Sub-título aqui" [(ngModel)]="subTitulo">
+            </div>
+            <div class="form-group">
+              <label for="jogo">Jogo</label>
+              <span *ngIf="!jogo" class="required-marker">*</span>
+              <select class="form-control" id="jogo" [(ngModel)]="jogo" name="jogo">
+                <option *ngFor="let jogo of listaJogos" value={{jogo.id}}>
+                  {{jogo.nome}}
+                </option>
+              </select>
+
+            </div>
+            <div class="form-group">
+              <input type="checkbox" class="form-check-input" id="manchete" [(ngModel)]="manchete" name="manchete">
+              <label class="form-check-label" for="manchete" style="margin-left:5px">Manchete</label>
+            </div>
+            <div class="form-group">
+              <label for="imagens" class="required-field">Imagens</label>
+              <span *ngIf="!listaImagens.length" class="required-marker">*</span>
+              <div class="row">
+                <input type="file" class="form-control" id="imagens" name="file"
+                       style="opacity:1;margin-top: 30px; padding: 6px; width: 85%"
+                       [(ngModel)]="imagem"
+                       (change)="handleFileSelect($event)"
+                       [ngModelOptions]="{standalone: true}" />
+              </div>
+              <button class="btn btn-primary" style="float:right; margin:0px; padding: 6px" (click)="adicionarImagens()">Adicionar</button>
+            </div>
+            <br />
+            <label *ngIf="listaImagens.length">Lista de imagens</label>
+            <div *ngFor="let img of listaImagens; let i = index">
+              <i class="fa-solid fa-xmark" style="float: right; color: red"></i>
+              <div>
+                <input type="radio" name="arquivo" class="form-check-input" [value]="i" [(ngModel)]="indiceCapaSelecionada"> {{ img.nome }}
+              </div>
+            </div>
+            <span *ngIf="listaImagens.length" style="font-size: 10px">Selecione uma imagem para que seja a capa da noticia</span>
+            <div class="form-group">
+              <label for="corpo">Corpo da review</label>
+              <span *ngIf="!htmlContent" class="required-marker">*</span>
+              <angular-editor name="corpo" [config]="editorConfig" ngDefaultControl [(ngModel)]="htmlContent" [ngModelOptions]="{standalone: true}"></angular-editor>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="botao-flutuante" *ngIf="validarForm()" (click)="salvar()">
+  <i class="fa-sharp fa-regular fa-floppy-disk"></i>
+</button>
+
+<button class="botao-flutuante" *ngIf="!validarForm()" style="background-color:gray">
+  <i class="fa-sharp fa-regular fa-floppy-disk"></i>
+</button>

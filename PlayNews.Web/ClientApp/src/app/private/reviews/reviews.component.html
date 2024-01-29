@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" style="background-color: #993399 !important">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <div class="navbar-toggle">
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" href="#" style="margin-left:277px; color:white">Reviews</a>
+    </div>
+  </div>
+</nav>
+<br />
+<div class="content" style="margin-top:70px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="dataTables_wrapper">
+            <table datatable [dtOptions]="dtOptions" class="table table-striped">
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="botao-flutuante" routerLink="/criar-review">
+  <i class="fa fa-plus"></i>
+</button>

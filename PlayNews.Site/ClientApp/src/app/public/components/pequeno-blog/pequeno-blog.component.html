@@ -1,0 +1,21 @@
+<div class="kf_bit_business">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of ultimasAnalises">
+        <div class="kf_bit_fig fig_2">
+          <figure class="overlay">
+            <img src="data:image/jpeg;base64, {{item.imagem.data}}" alt="">
+            <figcaption class="bit_caption">
+              <a class="theam_btn margin-bottom" href="#">{{item.tipo}}</a>
+              <h4><a href="#">{{item.titulo}}</a></h4>
+              <ul class="bit_meta meta_2">
+                <li><a href="#"><i class="fa fa-calendar-check-o"></i>{{item.dataPublicacao}}</a></li>
+                <li><a href="#"><i class="fa fa-user"></i>Gleison</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

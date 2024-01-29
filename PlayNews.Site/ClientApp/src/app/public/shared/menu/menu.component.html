@@ -1,0 +1,131 @@
+<header>
+  <!--KF TOP WRAP START-->
+  <div class="kf_top_wrap">
+    <!--KF TOP BAR START-->
+    <div class="kf_top_bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="kf_top_left_text" *ngIf="topNoticias.length">
+              <span>Noticias do momento</span>
+              <ngx-slick-carousel class="carousel"
+                                  #slickModal="slick-carousel"
+                                  [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let label of topNoticias" class="slide">
+                  <p>{{label.nome}}</p>
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="kf_top_right_text">
+              <span>{{ dataAtual | date:'dd/MM/yyyy'}}</span>
+              <ul class="top_icon">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+              </ul>
+              <div class="top_drop_btn">
+                <div class="dropdown">
+                  <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true">
+                    <img src="../../../../assets/images/pt_br.png" style="width:30px;" alt="">BR
+                  </button>
+                  <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#"><img src="../../../../assets/images/pt_br.png" alt="">U.S</a></li>
+                    <li><a href="#"><img src="../../../../assets/images/country_fig.png" alt="">A.S</a></li>
+                    <li><a href="#"><img src="../../../../assets/images/country_fig.png" alt="">U.A</a></li>
+                  </ul>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--KF TOP BAR END-->
+  </div>
+  <!--KF TOP WRAP END-->
+  <!--KF LOGO WRAP START-->
+  <div class="kf_logo_wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="kf_logo">
+            <a href="#"><img src="../../../../assets/images/logo-top.png" alt=""></a>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="kf_banner_add overlay">
+            <div class="kf_add_text">
+              <h5>De Gamer,<br>Para Gamers</h5>
+            </div>
+            <div class="kf_add_content">
+              <h3>Banner Ad</h3>
+              <span>760 x 90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--KF LOGO WRAP END-->
+  <!--KF NAVI WRAP START-->
+  <div class="kf_nav_wrap">
+    <div class="container">
+      <!--KF NAVIGATION ROW START-->
+      <div class="kf_navigation_row">
+        <div class="navigation">
+          <ul>
+            <li><a class="active" href="#"><i class="fa fa-home"></i></a></li>
+            <li>
+              <a class="inicio" href="#">Inicio</a>
+            </li>
+            <li><a class="noticias" href="about-us.html">Noticias</a></li>
+            <li>
+              <a class="detonados" href="#">Detonados</a>
+            </li>
+            <li class="mega_menu">
+              <a class="reviews" href="#">Reviews</a>
+            </li>
+            <li>
+              <a class="xbox" href="#">Xbox</a>
+            </li>
+            <li>
+              <a class="sony" href="#">Sony</a>
+            </li>
+            <li><a class="nintendo" href="#">Nintendo</a></li>
+          </ul>
+        </div>
+        <form method="post" id="commentform" class="comment_form">
+          <div class="kf_commet_field">
+            <input placeholder="Digite aqui" name="author" type="text" value="" data-default="Name*" size="30" required>
+            <button><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+      <!--KF NAVIGATION ROW END-->
+    </div>
+  </div>
+  <!--KF NAVI WRAP END-->
+</header>
+
+<script src="assets/js/jquery.js"></script>
+<!-- Bootstrap script-->
+<script src="assets/js/bootstrap.js"></script>
+<!-- modernizr script-->
+<script src="assets/js/jquery.prettyphoto.js"></script>
+<!-- responsive-jquery script-->
+<script src="assets/js/jquery.downCount.js"></script>
+<!-- responsive-jquery script-->
+<script src="assets/js/jquery.mkinfinite.js"></script>
+<!-- responsive-jquery script-->
+<script src="assets/js/modernizr.custom.js"></script>
+<!-- responsive-jquery script-->
+<script src="assets/js/jquery.dlmenu.js"></script>
+<!-- Slick Slider script-->
+<script src="assets/js/slick.js"></script>
+<!-- Custom scripts-->
+<script src="assets/js/custom.js"></script>
+<!-- style.css -->
+<link href="style.css">
